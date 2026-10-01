@@ -299,9 +299,9 @@ footer small{display:block;margin-top:10px;font-size:13px;color:rgba(244,241,236
   .hero{min-height:0;display:block}
   .slides{position:relative;inset:auto;width:100%;aspect-ratio:4/3}
   .slides img,.slides img.on{animation:none;transform:none}
-  .hero::before{top:0;bottom:auto;height:75vw;background:linear-gradient(180deg,rgba(252,250,246,0) 0%,rgba(252,250,246,0) 62%,rgba(252,250,246,.85) 88%,#fcfaf6 100%)}
+  .hero::before{top:0;bottom:auto;height:75vw;background:linear-gradient(180deg,rgba(252,250,246,0) 0%,rgba(252,250,246,0) 40%,rgba(252,250,246,.82) 70%,rgba(252,250,246,.96) 88%,#fcfaf6 100%)}
   .hero{background:#fcfaf6}
-  .hero .wrap{margin-top:-34px}
+  .hero .wrap{margin-top:-96px}
   .hero-side{display:none}
   .hero-text{padding-block:0 32px}
   .hero .h{font-size:clamp(25px,8.2vw,34px)}
@@ -422,7 +422,7 @@ footer small{display:block;margin-top:10px;font-size:13px;color:rgba(244,241,236
             <span class="cmp-line"><span class="cmp-knob">‹ ›</span></span>
             <input type="range" min="0" max="100" value="50" id="cmp-jalaton" aria-label="Desliza para comparar el salón ahora y con tu ayuda">
           </div>
-          <figcaption><b>Jalatón comunitario</b><span>Las mismas mesas, otro salón.</span></figcaption>
+          <figcaption><b>Jalatón comunitario</b><span>El mismo evento, otro salón.</span></figcaption>
         </figure>
       </div>
     </div>
@@ -530,8 +530,8 @@ footer small{display:block;margin-top:10px;font-size:13px;color:rgba(244,241,236
     imgs[k].classList.remove('on'); k = (k + 1) % imgs.length;
     void imgs[k].offsetWidth; imgs[k].classList.add('on');
   }
-  // la primera foto 0,8 s; las demás 1,2 s
-  if (imgs.length > 1) setTimeout(function(){ nextSlide(); setInterval(nextSlide, 1200); }, 800);
+  // la primera foto 0,8 s; las demás 1,3 s
+  if (imgs.length > 1) setTimeout(function(){ nextSlide(); setInterval(nextSlide, 1300); }, 800);
   // Aparición al bajar
   var els = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !reduce) {
