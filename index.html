@@ -526,10 +526,12 @@ footer small{display:block;margin-top:10px;font-size:13px;color:rgba(244,241,236
   document.documentElement.classList.add('js');
   // Pase de fotos de la portada
   var imgs = document.querySelectorAll('.slides img'), k = 0;
-  if (imgs.length > 1) setInterval(function(){
+  function nextSlide(){
     imgs[k].classList.remove('on'); k = (k + 1) % imgs.length;
     void imgs[k].offsetWidth; imgs[k].classList.add('on');
-  }, 1800);
+  }
+  // la primera foto cambia antes; luego cada 1,6 s
+  if (imgs.length > 1) setTimeout(function(){ nextSlide(); setInterval(nextSlide, 1600); }, 1000);
   // Aparición al bajar
   var els = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !reduce) {
