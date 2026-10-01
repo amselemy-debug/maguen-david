@@ -164,7 +164,7 @@ footer small{display:block;margin-top:10px;font-size:13px;color:rgba(244,241,236
 
 /* Vida */
 .slides{position:absolute;inset:0;z-index:0;overflow:hidden}
-.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease;transform:scale(1.04)}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s ease;transform:scale(1.04)}
 .slides img.on{opacity:1;animation:kb 5s ease-out forwards}
 @keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.13)}}
 .js .meter-bar i{width:0;transition:width 2.2s cubic-bezier(.2,.7,.2,1)}
@@ -530,8 +530,8 @@ footer small{display:block;margin-top:10px;font-size:13px;color:rgba(244,241,236
     imgs[k].classList.remove('on'); k = (k + 1) % imgs.length;
     void imgs[k].offsetWidth; imgs[k].classList.add('on');
   }
-  // la primera foto cambia antes; luego cada 1,6 s
-  if (imgs.length > 1) setTimeout(function(){ nextSlide(); setInterval(nextSlide, 1600); }, 1000);
+  // cada foto 1 segundo
+  if (imgs.length > 1) setInterval(nextSlide, 1000);
   // Aparición al bajar
   var els = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !reduce) {
