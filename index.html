@@ -530,8 +530,8 @@ footer small{display:block;margin-top:10px;font-size:13px;color:rgba(244,241,236
     imgs[k].classList.remove('on'); k = (k + 1) % imgs.length;
     void imgs[k].offsetWidth; imgs[k].classList.add('on');
   }
-  // cada foto 1 segundo
-  if (imgs.length > 1) setInterval(nextSlide, 1000);
+  // la primera foto 0,8 s; las demás 1,2 s
+  if (imgs.length > 1) setTimeout(function(){ nextSlide(); setInterval(nextSlide, 1200); }, 800);
   // Aparición al bajar
   var els = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !reduce) {
